@@ -26,6 +26,14 @@ All the wording (headline, intro, services, about, contact links, footer) is in 
 Open it on GitHub, click the pencil icon, edit the text between the quotes, and click **Commit changes**.
 Keep the quotes and commas where they are.
 
+## SEO text
+
+- `seo` in `site.json` holds the Google title, the description under it, and the small line above the headline.
+- Each gallery has `seoTitle` (its page heading, like "Concert Photography") and `intro` (one or two sentences Google reads). Keep a city name in there.
+- `faq` is the Questions section. Add or edit questions and answers there.
+- To describe a specific photo for Google, add `"alts": { "03.jpg": "Satinder Sartaaj on stage in NJ" }` to that gallery.
+- Each gallery gets its own page, for example mongiamedia.com/concerts/. The sitemap and share images are made automatically.
+
 ## Change the cover photo of a gallery
 
 In `site.json`, change `"cover"` for that gallery to the photo's filename.

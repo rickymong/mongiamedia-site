@@ -1,33 +1,116 @@
 {
+  "url": "https://mongiamedia.com",
+  "seo": {
+    "title": "Mongia Media | Photographer and Videographer in NJ, NYC and Seattle",
+    "description": "Rick Mongia photographs and films concerts, events, graduations, portraits and real estate across New Jersey, New York City and Seattle. Book a free planning call.",
+    "eyebrow": "Photographer and videographer in New Jersey, NYC and Seattle",
+    "city": "New Brunswick",
+    "region": "NJ",
+    "country": "US"
+  },
   "hero": {
     "headline": "Concerts, graduations, events and portraits.",
     "intro": "I'm Rick Mongia, a photographer and videographer working across New Jersey, New York City and the Seattle area. I make images that hold up printed large and look right on your feed.",
     "note": "Based in New Brunswick, NJ. Shooting since 2022.",
     "strip": [
-      "01-concerts/03.jpg", "05-street/13.jpg", "02-events/05.jpg", "04-graduation/01.jpg",
-      "01-concerts/01.jpg", "05-street/21.jpg", "02-events/09.jpg", "05-street/08.jpg",
-      "04-graduation/17.jpg", "01-concerts/04.jpg", "02-events/01.jpg", "05-street/15.jpg",
-      "04-graduation/02.jpg", "05-street/17.jpg", "02-events/04.jpg", "05-street/24.jpg"
+      "01-concerts/03.jpg",
+      "05-street/13.jpg",
+      "02-events/05.jpg",
+      "04-graduation/01.jpg",
+      "01-concerts/01.jpg",
+      "05-street/21.jpg",
+      "02-events/09.jpg",
+      "05-street/08.jpg",
+      "04-graduation/17.jpg",
+      "01-concerts/04.jpg",
+      "02-events/01.jpg",
+      "05-street/15.jpg",
+      "04-graduation/02.jpg",
+      "05-street/17.jpg",
+      "02-events/04.jpg",
+      "05-street/24.jpg"
     ]
   },
   "galleries": {
-    "01-concerts": { "title": "Concerts", "cover": "02.jpg" },
-    "02-events": { "title": "Events", "cover": "05.jpg" },
-    "04-graduation": { "title": "Graduation", "cover": "14.jpg" },
-    "03-portraits": { "title": "Portraits", "cover": "03.jpg", "coverPosition": "50% 100%" },
-    "05-street": { "title": "Street", "cover": "13.jpg" },
-    "06-shot-on-iphone": { "title": "Shot on iPhone", "cover": "02.jpg", "coverPosition": "50% 100%" },
-    "07-more-work": { "title": "More Work", "cover": "02.jpg", "coverPosition": "50% 100%" }
+    "01-concerts": {
+      "title": "Concerts",
+      "cover": "02.jpg",
+      "seoTitle": "Concert Photography",
+      "intro": "Concert and live music photography in New Jersey, New York City and Seattle. Stage light, crowd energy and the moments between songs."
+    },
+    "02-events": {
+      "title": "Events",
+      "cover": "05.jpg",
+      "seoTitle": "Event Photography",
+      "intro": "Event photography for parties, cultural events, school functions and corporate gatherings across New Jersey, NYC and the Seattle area."
+    },
+    "04-graduation": {
+      "title": "Graduation",
+      "cover": "14.jpg",
+      "seoTitle": "Graduation Photography",
+      "intro": "Graduation photos, senior portraits and ceremony coverage, including Rutgers in New Brunswick and schools across New Jersey, NYC and Seattle."
+    },
+    "03-portraits": {
+      "title": "Portraits",
+      "cover": "03.jpg",
+      "coverPosition": "50% 100%",
+      "seoTitle": "Portrait Photography",
+      "intro": "Portraits and headshots for students, professionals and creators, shot on location in New Jersey, New York City and the Pacific Northwest."
+    },
+    "05-street": {
+      "title": "Street",
+      "cover": "13.jpg",
+      "seoTitle": "Street Photography",
+      "intro": "Street photography from New York City, New Jersey and Seattle. Candid moments, city light and everyday life."
+    },
+    "06-shot-on-iphone": {
+      "title": "Shot on iPhone",
+      "cover": "02.jpg",
+      "coverPosition": "50% 100%",
+      "seoTitle": "Shot on iPhone",
+      "intro": "Photos shot entirely on iPhone. Proof that good light and timing matter more than the gear."
+    },
+    "07-more-work": {
+      "title": "More Work",
+      "cover": "02.jpg",
+      "coverPosition": "50% 100%",
+      "seoTitle": "More Work",
+      "intro": "More photography from Mongia Media across New Jersey, New York City and Seattle."
+    }
   },
   "services": [
-    { "title": "Events", "text": "Parties, concerts, school events and corporate functions, documented start to finish in photo and video." },
-    { "title": "Portraits and headshots", "text": "Headshots, personal portraits and LinkedIn photos for students, professionals and creators." },
-    { "title": "Real estate", "text": "Listing photos and video for homes, Airbnbs, commercial spaces and architecture." },
-    { "title": "Graduations and seniors", "text": "Graduation photos, senior portraits and ceremonies in New Jersey, NYC and the Pacific Northwest." },
-    { "title": "Weddings and engagements", "text": "Engagement sessions through full wedding days, with photo and video coverage." },
-    { "title": "Social media content", "text": "Photos and short-form video for Instagram, TikTok and YouTube, for creators and businesses." },
-    { "title": "Product and commercial", "text": "Product, food and commercial photography that shows off your menu, storefront or catalog." },
-    { "title": "Lifestyle and family", "text": "Family, maternity, newborn and pet sessions that stay relaxed from start to finish." }
+    {
+      "title": "Events",
+      "text": "Parties, concerts, school events and corporate functions, documented start to finish in photo and video."
+    },
+    {
+      "title": "Portraits and headshots",
+      "text": "Headshots, personal portraits and LinkedIn photos for students, professionals and creators."
+    },
+    {
+      "title": "Real estate",
+      "text": "Listing photos and video for homes, Airbnbs, commercial spaces and architecture."
+    },
+    {
+      "title": "Graduations and seniors",
+      "text": "Graduation photos, senior portraits and ceremonies in New Jersey, NYC and the Pacific Northwest."
+    },
+    {
+      "title": "Weddings and engagements",
+      "text": "Engagement sessions through full wedding days, with photo and video coverage."
+    },
+    {
+      "title": "Social media content",
+      "text": "Photos and short-form video for Instagram, TikTok and YouTube, for creators and businesses."
+    },
+    {
+      "title": "Product and commercial",
+      "text": "Product, food and commercial photography that shows off your menu, storefront or catalog."
+    },
+    {
+      "title": "Lifestyle and family",
+      "text": "Family, maternity, newborn and pet sessions that stay relaxed from start to finish."
+    }
   ],
   "about": {
     "heading": "Behind the camera",
@@ -47,5 +130,27 @@
     "linkedin": "rickmongia",
     "facebook": "https://www.facebook.com/share/187DQrH5Qs/?mibextid=wwXIfr"
   },
-  "footer": "© 2026 Mongia Media (formerly Rixx Flixx)"
+  "footer": "© 2026 Mongia Media (formerly Rixx Flixx)",
+  "faq": [
+    {
+      "q": "Where are you based, and where do you shoot?",
+      "a": "I'm based in New Brunswick, NJ and shoot across New Jersey and New York City. I'm also in the Seattle area and the Pacific Northwest regularly, and I'm open to travel for the right project."
+    },
+    {
+      "q": "Do you offer both photography and videography?",
+      "a": "Yes. I shoot photo, video or both, including short-form video for Instagram, TikTok and YouTube."
+    },
+    {
+      "q": "Do you photograph Rutgers graduations?",
+      "a": "Yes. I'm a Rutgers student myself and shoot graduation photos, senior portraits and ceremonies around New Brunswick, across New Jersey and in NYC."
+    },
+    {
+      "q": "What kinds of shoots do you take on?",
+      "a": "Events, concerts, portraits and headshots, graduations, real estate, weddings and engagements, social media content, product and commercial work, and family sessions."
+    },
+    {
+      "q": "How do I book a shoot?",
+      "a": "Pick a time for a free 30-minute planning call. We'll go over the vision, locations and timing, and I'll send a quote after."
+    }
+  ]
 }
