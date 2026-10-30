@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mongia Media</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Mongia Media: photography and videography by Rick Mongia in New Jersey, New York City and Seattle.">
+<meta property="og:title" content="Mongia Media">
+<meta property="og:description" content="Concerts, graduations, events and portraits in NJ, NYC and Seattle.">
+<link rel="icon" href="assets/logo-white.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap">
+<style>
+/* Layout: a black, photo-first site. Left-aligned type; one moving element (the curved photo strip);
+   galleries as a bento of real covers; services as a plain two-column sheet. Single dark look by choice. */
+:root{
+  color-scheme:dark;
+  --bg:#000000;
+  --raised:#0d0d0e;
+  --line:#232326;
+  --fg:#f2f2f0;
+  --fg-2:#a3a3a0;
+  --fg-3:#6e6e6b;
+  --focus:#e05a4e;
+  --font:"Geist","Helvetica Neue",Arial,sans-serif;
+  --r:6px;
+  --wrap:1240px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+img{max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-weight:500;letter-spacing:-.03em;text-wrap:balance}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(0,0,0,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:12px}
+.top .logo{width:88px;flex:none;display:block}
+.top .logo img{display:block;width:100%;height:auto}
+.top nav{display:flex;align-items:center;gap:clamp(16px,2.6vw,30px)}
+.top nav a{font-size:14.5px;color:var(--fg-2)}
+.top nav a:hover{color:var(--fg)}
+@media (max-width:620px){.top nav a.hide-sm{display:none}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 20px;border-radius:var(--r);font-size:14.5px;font-weight:500;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.btn.light{background:var(--fg);color:#000}
+.btn.light:hover{background:#d8d8d5}
+.btn.line{border:1px solid #3a3a3d;color:var(--fg)}
+.btn.line:hover{border-color:var(--fg)}
+.top .btn{height:36px;padding:0 14px;font-size:14px}
+.top nav a.btn.light{color:#000}
+
+/* hero */
+.hero{padding-top:clamp(56px,9vw,120px)}
+.hero h1{font-size:clamp(2.6rem,1.2rem + 5.6vw,6rem);line-height:.96;max-width:13ch}
+.hero .row{margin-top:clamp(28px,4vw,44px);display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:24px 56px;align-items:end}
+.hero .intro{color:var(--fg-2);font-size:clamp(1.02rem,.95rem + .3vw,1.18rem);max-width:50ch}
+.hero .acts{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+.hero .note{margin-top:14px;font-size:13.5px;color:var(--fg-3)}
+@media (max-width:820px){.hero .row{grid-template-columns:1fr}.hero .acts{justify-content:flex-start}}
+
+/* curved photo strip */
+.strip{position:relative;overflow:hidden;margin-top:clamp(44px,6vw,72px);height:clamp(230px,28vw,360px);perspective:1400px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.track{position:absolute;top:0;left:0;height:100%;display:flex;gap:12px;transform-style:preserve-3d;will-change:transform}
+.card{flex:none;height:100%;aspect-ratio:3/4;border-radius:var(--r);overflow:hidden;background:var(--raised);will-change:transform}
+.card img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* sections */
+section.block{padding-block:clamp(72px,10vw,128px)}
+.sh{display:flex;justify-content:space-between;align-items:baseline;gap:12px 40px;flex-wrap:wrap;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.sh h2{font-size:clamp(1.8rem,1.3rem + 2vw,2.8rem);line-height:1.05}
+.sh p{color:var(--fg-2);font-size:15px;max-width:48ch}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(170px,16vw,236px);gap:10px}
+.tile{position:relative;border-radius:var(--r);overflow:hidden;background:var(--raised)}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.tile::after{content:"";position:absolute;inset:auto 0 0;height:55%;background:linear-gradient(180deg,transparent,rgba(0,0,0,.72))}
+.tile:hover img{transform:scale(1.04)}
+.tile .lbl{position:absolute;left:16px;right:16px;bottom:13px;z-index:1;display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.tile h3{font-size:clamp(1.05rem,.95rem + .45vw,1.4rem)}
+.tile .count{font-size:13px;color:rgba(255,255,255,.72);font-variant-numeric:tabular-nums;white-space:nowrap}
+.bento .tile:nth-child(1){grid-column:1/3;grid-row:1/3}
+.bento .tile:nth-child(2){grid-column:3;grid-row:1/3}
+.bento .tile:nth-child(3){grid-column:4;grid-row:1/3}
+.bento .tile:nth-child(4){grid-column:1/3;grid-row:3/5}
+.bento .tile:nth-child(5){grid-column:3;grid-row:3}
+.bento .tile:nth-child(6){grid-column:4;grid-row:3}
+.bento .tile:nth-child(7){grid-column:3/5;grid-row:4}
+.bento .tile:nth-child(n+8){grid-column:span 2;grid-row:span 1}
+@media (max-width:820px){.bento{grid-template-columns:1fr 1fr;grid-auto-rows:190px}
+ .bento .tile:nth-child(n){grid-column:auto;grid-row:auto}
+ .bento .tile:nth-child(1),.bento .tile:nth-child(4),.bento .tile:nth-child(7){grid-column:1/3}
+ .bento .tile:nth-child(2),.bento .tile:nth-child(3){grid-row:span 2}}
+
+/* services sheet */
+.sheet{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(24px,5vw,72px)}
+.sv{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:6px 24px;padding-block:20px;border-bottom:1px solid var(--line)}
+.sv h3{font-size:1.06rem;letter-spacing:-.015em}
+.sv p{color:var(--fg-2);font-size:15px;line-height:1.55}
+@media (max-width:900px){.sheet{grid-template-columns:1fr}}
+@media (max-width:520px){.sv{grid-template-columns:1fr}}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);align-items:center}
+.about figure{margin:0;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;max-width:100%;background:var(--raised)}
+.about figure img{width:100%;height:100%;object-fit:cover;display:block}
+.about h2{font-size:clamp(1.8rem,1.3rem + 2vw,2.8rem);line-height:1.05;margin-bottom:20px}
+.about .copy{display:grid;gap:14px;color:var(--fg-2);max-width:58ch}
+.about .areas{margin-top:22px;padding-top:16px;border-top:1px solid var(--line);font-size:14.5px;color:var(--fg)}
+@media (max-width:860px){.about{grid-template-columns:1fr}.about figure{max-width:440px}}
+
+/* booking */
+.book{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,72px);align-items:start;padding-top:clamp(40px,5vw,56px);border-top:1px solid var(--line)}
+.book h2{font-size:clamp(2.4rem,1.4rem + 4vw,5rem);line-height:.96}
+.book .sub{margin-top:18px;color:var(--fg-2);max-width:44ch;font-size:1.06rem}
+.book .acts{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}
+.clist{display:grid;border-top:1px solid var(--line)}
+.crow{display:grid;grid-template-columns:90px minmax(0,1fr) auto;gap:12px;align-items:center;padding-block:14px;border-bottom:1px solid var(--line)}
+.crow .k{font-size:13px;color:var(--fg-3)}
+.crow .v{overflow-wrap:anywhere}
+.crow .v a:hover{text-decoration:underline;text-underline-offset:3px}
+.copy-btn{font:inherit;font-size:12.5px;background:none;border:1px solid #3a3a3d;color:var(--fg-2);padding:5px 10px;border-radius:var(--r);cursor:pointer}
+.copy-btn:hover{color:var(--fg);border-color:var(--fg)}
+@media (max-width:860px){.book{grid-template-columns:1fr}}
+
+footer{margin-top:clamp(72px,10vw,120px);border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:26px;font-size:13.5px;color:var(--fg-3)}
+footer img{width:70px;height:auto;display:block}
+footer nav{display:flex;gap:18px;flex-wrap:wrap}
+footer nav a:hover{color:var(--fg)}
+
+/* gallery page */
+#gallery{padding-top:clamp(32px,5vw,56px)}
+.back{font-size:14.5px;color:var(--fg-2)}
+.back:hover{color:var(--fg)}
+.g-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin:18px 0 26px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.g-top h1{font-size:clamp(2.4rem,1.4rem + 4vw,4.6rem);line-height:.95}
+.g-top .meta{color:var(--fg-2);font-size:14.5px}
+.masonry{columns:3 280px;column-gap:10px}
+.masonry button{all:unset;display:block;cursor:zoom-in;margin-bottom:10px;break-inside:avoid;border-radius:var(--r);overflow:hidden;background:var(--raised);width:100%;box-sizing:border-box}
+.masonry button:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.masonry img{display:block;width:100%;height:auto}
+.g-next{margin-top:36px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:18px;border-top:1px solid var(--line)}
+.g-next a{display:grid;gap:2px}
+.g-next span{font-size:13px;color:var(--fg-3)}
+.g-next b{font-weight:500;font-size:1.3rem;letter-spacing:-.025em}
+.g-next a:hover b{text-decoration:underline;text-underline-offset:4px}
+.g-next a:last-child{text-align:right}
+
+/* viewer */
+.viewer{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.95);display:grid;grid-template-rows:auto minmax(0,1fr) auto}
+.viewer .bar{display:flex;justify-content:space-between;align-items:center;padding:calc(14px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px));font-size:14px;color:var(--fg-2);font-variant-numeric:tabular-nums}
+.viewer .stage{display:flex;align-items:center;justify-content:center;padding:0 64px;min-height:0}
+.viewer .stage img{max-width:100%;max-height:100%;object-fit:contain}
+.vbtn{font:inherit;font-size:14px;background:none;border:1px solid #3a3a3d;color:var(--fg);cursor:pointer;height:38px;padding:0 14px;border-radius:var(--r)}
+.vbtn:hover{border-color:var(--fg)}
+.viewer .nv{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;padding:0;display:grid;place-items:center}
+.viewer .prev{left:max(12px,env(safe-area-inset-left,0px))}.viewer .next{right:max(12px,env(safe-area-inset-right,0px))}
+.viewer .foot{padding:10px 16px calc(14px + env(safe-area-inset-bottom,0px));text-align:center;color:var(--fg-3);font-size:12.5px}
+@media (max-width:600px){.viewer .stage{padding:0 10px}.viewer .nv{display:none}}
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--fg);color:#000;padding:10px 16px;border-radius:var(--r);font-size:14px;z-index:120}
+.load{padding:120px 0;color:var(--fg-3);text-align:center}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="logo" href="#top" aria-label="Mongia Media home"><img src="assets/logo-white.svg" alt="Mongia Media"></a>
+  <nav aria-label="Main">
+    <a class="hide-sm" href="#work">Work</a>
+    <a class="hide-sm" href="#services">Services</a>
+    <a class="hide-sm" href="#about">About</a>
+    <a class="btn light" href="#book">Book a call</a>
+  </nav>
+</div></header>
+
+<main id="home">
+  <section class="hero" id="top">
+    <div class="wrap">
+      <h1 id="hHead">Concerts, graduations, events and portraits.</h1>
+      <div class="row">
+        <div><p class="intro" id="hIntro"></p><p class="note" id="hNote"></p></div>
+        <div class="acts"><a class="btn light" href="#book">Book a free planning call</a><a class="btn line" href="#work">See the work</a></div>
+      </div>
+    </div>
+    <div class="strip" id="strip" aria-label="Recent photos"><div class="track" id="track"></div></div>
+  </section>
+
+  <section class="block" id="work">
+    <div class="wrap">
+      <div class="sh"><h2>Work</h2><p id="workNote">Open a gallery to see the full set.</p></div>
+      <div class="bento" id="bento"></div>
+    </div>
+  </section>
+
+  <section class="block" id="services" style="padding-top:0">
+    <div class="wrap">
+      <div class="sh"><h2>Services</h2><p>Photo and video for people, events and businesses. Every project starts with a free 30-minute planning call.</p></div>
+      <div class="sheet" id="svc"></div>
+    </div>
+  </section>
+
+  <section class="block" id="about" style="padding-top:0">
+    <div class="wrap about">
+      <figure><img src="assets/about.jpg" alt="Portrait of Rick Mongia in a black suit and tie" loading="lazy"></figure>
+      <div><h2 id="aHead"></h2><div class="copy" id="aCopy"></div><p class="areas" id="aAreas"></p></div>
+    </div>
+  </section>
+
+  <section id="book">
+    <div class="wrap book">
+      <div>
+        <h2>Let's plan your shoot.</h2>
+        <p class="sub">Pick a time for a free 30-minute call. We'll go over the vision, locations and timing, and I'll send a quote after.</p>
+        <div class="acts"><a class="btn light" id="bookBtn" href="#" target="_blank" rel="noopener">Choose a time</a><a class="btn line" id="igBtn" href="#" target="_blank" rel="noopener">Message on Instagram</a></div>
+      </div>
+      <div class="clist" id="contact" aria-label="Contact details"></div>
+    </div>
+  </section>
+</main>
+
+<main id="gallery" hidden>
+  <div class="wrap">
+    <a class="back" href="#work">&larr; All work</a>
+    <div class="g-top"><h1 id="gTitle"></h1><span class="meta" id="gMeta"></span></div>
+    <div class="masonry" id="gGrid"></div>
+    <div class="g-next" id="gNext"></div>
+  </div>
+</main>
+
+<footer><div class="wrap">
+  <img src="assets/logo-white.svg" alt="Mongia Media">
+  <nav aria-label="Footer"><a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#book">Book</a></nav>
+  <span id="foot"></span>
+</div></footer>
+
+<div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="bar"><span id="vCount"></span><button class="vbtn" id="vClose">Close</button></div>
+  <div class="stage" id="vStage"><img id="vImg" alt=""></div>
+  <button class="vbtn nv prev" id="vPrev" aria-label="Previous photo">&lsaquo;</button>
+  <button class="vbtn nv next" id="vNext" aria-label="Next photo">&rsaquo;</button>
+  <div class="foot">Swipe or use the arrow keys to move between photos. Press Esc to close.</div>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const el = (t, a = {}, txt) => { const e = document.createElement(t); for (const k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; return e; };
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let C, current = null;
+
+fetch('content.json').then(r => r.json()).then(data => { C = data; render(); route(); addEventListener('hashchange', route); });
+
+function render() {
+  const s = C.site;
+  $('#hHead').textContent = s.hero.headline; $('#hIntro').textContent = s.hero.intro; $('#hNote').textContent = s.hero.note;
+  strip(C.strip);
+  const total = C.galleries.reduce((n, g) => n + g.photos.length, 0);
+  $('#workNote').textContent = `${C.galleries.length} galleries, ${total} photos. Open one to see the full set.`;
+  C.galleries.forEach((g, i) => {
+    const a = el('a', {class: 'tile', href: '#' + g.id, 'aria-label': `${g.title}, ${g.photos.length} photos`});
+    const im = el('img', {src: g.cover, alt: '', loading: i < 3 ? 'eager' : 'lazy'}); im.style.objectPosition = g.coverPosition || '50% 50%';
+    const lbl = el('div', {class: 'lbl'}); lbl.append(el('h3', {}, g.title), el('span', {class: 'count'}, g.photos.length + ' photos'));
+    a.append(im, lbl); $('#bento').append(a);
+  });
+  s.services.forEach(v => { const d = el('div', {class: 'sv'}); d.append(el('h3', {}, v.title), el('p', {}, v.text)); $('#svc').append(d); });
+  $('#aHead').textContent = s.about.heading; s.about.paragraphs.forEach(p => $('#aCopy').append(el('p', {}, p))); $('#aAreas').textContent = s.about.areas;
+  const c = s.contact;
+  $('#bookBtn').href = c.booking; $('#igBtn').href = 'https://www.instagram.com/' + c.instagram;
+  const rows = [['Email', c.email, 'mailto:' + c.email, c.email], ['WhatsApp', c.whatsapp, c.whatsappLink, c.whatsapp], ['Instagram', '@' + c.instagram, 'https://www.instagram.com/' + c.instagram],
+    ['LinkedIn', 'in/' + c.linkedin, 'https://www.linkedin.com/in/' + c.linkedin], ['Facebook', 'Mongia Media', c.facebook]];
+  rows.forEach(([k, v, href, copy]) => {
+    const r = el('div', {class: 'crow'}); const vv = el('span', {class: 'v'}); const a = el('a', {href}, v); if (!href.startsWith('mailto')) { a.target = '_blank'; a.rel = 'noopener'; } vv.append(a);
+    r.append(el('span', {class: 'k'}, k), vv);
+    if (copy) { const b = el('button', {class: 'copy-btn'}, 'Copy'); b.onclick = () => copyText(copy, vv); r.append(b); } else r.append(el('span'));
+    $('#contact').append(r);
+  });
+  $('#foot').textContent = s.footer;
+}
+
+// curved strip: slow constant drift; cards near the edges turn toward the viewer
+function strip(srcs) {
+  const box = $('#strip'), track = $('#track');
+  [...srcs, ...srcs].forEach((src, i) => { const c = el('div', {class: 'card'}); c.append(el('img', {src, alt: '', loading: i < 8 ? 'eager' : 'lazy', decoding: 'async'})); track.append(c); });
+  const cards = [...track.children]; let x = 0, half = 0, last = performance.now(), speed = 30, target = 30;
+  const measure = () => { half = track.scrollWidth / 2 + 6; }; measure(); addEventListener('resize', measure);
+  box.addEventListener('mouseenter', () => target = 8); box.addEventListener('mouseleave', () => target = 30);
+  (function frame(t) {
+    const dt = Math.min(64, t - last) / 1000; last = t; speed += (target - speed) * 0.06;
+    if (!reduce) x -= speed * dt; if (half && -x > half) x += half;
+    track.style.transform = `translate3d(${x}px,0,0)`;
+    const W = box.clientWidth, cx = W / 2;
+    for (const c of cards) { const d = Math.max(-1.3, Math.min(1.3, (c.offsetLeft + x + c.offsetWidth / 2 - cx) / (W / 2)));
+      c.style.transform = `translateZ(${Math.abs(d) * 70}px) rotateY(${-d * 18}deg)`; }
+    requestAnimationFrame(frame);
+  })(last);
+}
+
+function route() {
+  const id = location.hash.slice(1), g = C.galleries.find(x => x.id === id);
+  if (g) {
+    current = g; $('#home').hidden = true; $('#gallery').hidden = false;
+    $('#gTitle').textContent = g.title; $('#gMeta').textContent = g.photos.length + ' photos';
+    const grid = $('#gGrid'); grid.innerHTML = '';
+    g.photos.forEach((p, i) => { const b = el('button', {'aria-label': `Open photo ${i + 1} of ${g.photos.length}`});
+      b.append(el('img', {src: p.thumb, alt: `${g.title}, photo ${i + 1}`, loading: i < 6 ? 'eager' : 'lazy', width: p.w, height: p.h}));
+      b.onclick = () => openViewer(i); grid.append(b); });
+    const k = C.galleries.indexOf(g), n = C.galleries.length, prev = C.galleries[(k - 1 + n) % n], next = C.galleries[(k + 1) % n];
+    const nx = $('#gNext'); nx.innerHTML = '';
+    [[prev, 'Previous gallery'], [next, 'Next gallery']].forEach(([x, lab]) => { const a = el('a', {href: '#' + x.id}); a.append(el('span', {}, lab), el('b', {}, x.title)); nx.append(a); });
+    scrollTo(0, 0);
+  } else {
+    current = null; $('#gallery').hidden = true; $('#home').hidden = false;
+    if (id) { const t = document.getElementById(id); if (t) t.scrollIntoView(); }
+  }
+}
+
+let vi = 0, lastFocus = null;
+function show(i) { const ps = current.photos; vi = (i + ps.length) % ps.length; $('#vImg').src = ps[vi].full; $('#vImg').alt = `${current.title}, photo ${vi + 1}`;
+  $('#vCount').textContent = `${current.title}  ${vi + 1} / ${ps.length}`; new Image().src = ps[(vi + 1) % ps.length].full; }
+function openViewer(i) { lastFocus = document.activeElement; $('#viewer').hidden = false; document.body.style.overflow = 'hidden'; show(i); $('#vClose').focus(); }
+function closeViewer() { $('#viewer').hidden = true; document.body.style.overflow = ''; if (lastFocus) lastFocus.focus(); }
+$('#vClose').onclick = closeViewer; $('#vPrev').onclick = () => show(vi - 1); $('#vNext').onclick = () => show(vi + 1);
+$('#vStage').addEventListener('click', e => { if (e.target.id === 'vStage') closeViewer(); });
+addEventListener('keydown', e => { if ($('#viewer').hidden) return; if (e.key === 'Escape') closeViewer(); if (e.key === 'ArrowRight') show(vi + 1); if (e.key === 'ArrowLeft') show(vi - 1); });
+let tx = null; $('#viewer').addEventListener('touchstart', e => tx = e.touches[0].clientX, {passive: true});
+$('#viewer').addEventListener('touchend', e => { if (tx === null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) show(vi + (dx < 0 ? 1 : -1)); tx = null; });
+
+function copyText(v, node) {
+  const done = () => { const t = el('div', {class: 'toast', role: 'status'}, 'Copied ' + v); document.body.append(t); setTimeout(() => t.remove(), 1800); };
+  const sel = () => { const r = document.createRange(); r.selectNodeContents(node); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+  try { navigator.clipboard.writeText(v).then(done, sel); } catch (e) { sel(); }
+}
+</script>
+</body>
+</html>

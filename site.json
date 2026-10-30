@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "headline": "Concerts, graduations, events and portraits.",
+    "intro": "I'm Rick Mongia, a photographer and videographer working across New Jersey, New York City and the Seattle area. I make images that hold up printed large and look right on your feed.",
+    "note": "Based in New Brunswick, NJ. Shooting since 2022.",
+    "strip": [
+      "01-concerts/03.jpg", "05-street/13.jpg", "02-events/05.jpg", "04-graduation/01.jpg",
+      "01-concerts/01.jpg", "05-street/21.jpg", "02-events/09.jpg", "05-street/08.jpg",
+      "04-graduation/17.jpg", "01-concerts/04.jpg", "02-events/01.jpg", "05-street/15.jpg",
+      "04-graduation/02.jpg", "05-street/17.jpg", "02-events/04.jpg", "05-street/24.jpg"
+    ]
+  },
+  "galleries": {
+    "01-concerts": { "title": "Concerts", "cover": "02.jpg" },
+    "02-events": { "title": "Events", "cover": "05.jpg" },
+    "04-graduation": { "title": "Graduation", "cover": "14.jpg" },
+    "03-portraits": { "title": "Portraits", "cover": "03.jpg", "coverPosition": "50% 100%" },
+    "05-street": { "title": "Street", "cover": "13.jpg" },
+    "06-shot-on-iphone": { "title": "Shot on iPhone", "cover": "02.jpg", "coverPosition": "50% 100%" },
+    "07-more-work": { "title": "More Work", "cover": "02.jpg", "coverPosition": "50% 100%" }
+  },
+  "services": [
+    { "title": "Events", "text": "Parties, concerts, school events and corporate functions, documented start to finish in photo and video." },
+    { "title": "Portraits and headshots", "text": "Headshots, personal portraits and LinkedIn photos for students, professionals and creators." },
+    { "title": "Real estate", "text": "Listing photos and video for homes, Airbnbs, commercial spaces and architecture." },
+    { "title": "Graduations and seniors", "text": "Graduation photos, senior portraits and ceremonies in New Jersey, NYC and the Pacific Northwest." },
+    { "title": "Weddings and engagements", "text": "Engagement sessions through full wedding days, with photo and video coverage." },
+    { "title": "Social media content", "text": "Photos and short-form video for Instagram, TikTok and YouTube, for creators and businesses." },
+    { "title": "Product and commercial", "text": "Product, food and commercial photography that shows off your menu, storefront or catalog." },
+    { "title": "Lifestyle and family", "text": "Family, maternity, newborn and pet sessions that stay relaxed from start to finish." }
+  ],
+  "about": {
+    "heading": "Behind the camera",
+    "paragraphs": [
+      "I'm a student at Rutgers University, splitting my time between New Jersey and Washington State. I started taking photos in middle school and launched Mongia Media to give people affordable, high-quality photo and video they can count on.",
+      "I specialize in portrait, real estate, event and street photography, plus videography, and I'm always open to travel for the right project.",
+      "Off the clock I'm playing guitar and bass, exploring new places, or spending time with family and friends."
+    ],
+    "areas": "New Jersey, New York City, Seattle and the PNW. Available to travel."
+  },
+  "contact": {
+    "booking": "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1NZHRc7YWLs3IScnmSyyyHOzsrlV7lv3Zo9gXOxO-lJEwkCiFbRY8u4tHFsGfftsKaEtgnyDRY",
+    "email": "rick@mongiamedia.com",
+    "whatsapp": "+1 (425) 523-8371",
+    "whatsappLink": "https://wa.me/14255238371",
+    "instagram": "mongiamedia",
+    "linkedin": "rickmongia",
+    "facebook": "https://www.facebook.com/share/187DQrH5Qs/?mibextid=wwXIfr"
+  },
+  "footer": "© 2026 Mongia Media (formerly Rixx Flixx)"
+}
